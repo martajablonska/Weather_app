@@ -53,19 +53,19 @@ class App extends React.Component {
         
         const city = e.target.elements.city.value;
         
-        /*to get api with weather*/
+        {/*to get api with weather*/}
         const apiWeather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)    
         const dataWeather = await apiWeather.json();  
         
-        /*to get api with 5 days forecast*/        
+        {/*to get api with 5 days forecast*/}       
         const apiForecast = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`)
         const dataForecast = await apiForecast.json();
         
-       /*to choose forecast for midday which will represent all day*/
+        {/*to choose forecast for midday which will represent all day*/}
         const listForecast = dataForecast.list;
-        const middayForecast = [];      /*array with only 5 forecast for midday to every day*/
+        const middayForecast = [];      {/*array with only 5 forecast for midday to every day*/}
         
-        for(let i =0; i <listForecast.length; i++) {  /*yes, it's for loop... i tried to done that in diffrent way but something went wrong*/                 
+        for(let i =0; i <listForecast.length; i++) {  {/*yes, it's for loop... i tried to done that in diffrent way but something went wrong*/}                 
             const item = listForecast[i].dt;    
             const hour = (new Date(item*1000)).getHours()-2;
             
@@ -74,14 +74,14 @@ class App extends React.Component {
             };
         };
         
-        /*variables representing weather and forecast items*/
+        {/*variables representing weather and forecast items*/}
         const day = function(item) {  return (new Date((item.dt)*1000)).getDate(); };
         const month = function(item) { return (new Date((middayForecast[0].dt)*1000)).getMonth()+1; }
         const press = function(item) { return Math.round(item.main.pressure); };
         const hum = function(item) { return item.main.humidity; };    
         const desc = function(item) { return item.weather[0].description; };
         
-        /*variables representing next forecast days*/
+        {/*variables representing next forecast days*/}
         const firstDay = middayForecast[0];    
         const secondDay = middayForecast[1]; 
         const thirdDay = middayForecast[2];  

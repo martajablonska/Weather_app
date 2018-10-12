@@ -2,13 +2,13 @@ import React from "react";
 import temp from '../images/temp.png';
 import press from '../images/press.png';
 import hum from '../images/hum.png';
-import {deg} from "../config.js"; /*to change degrees from Celcius to Farenhait*/
+import {deg} from "../config.js"; {/*to change degrees from Celcius to Farenhait*/}
 
 class Weather extends React.Component {
     
     render() {
         return(
-            <div>   /*if first part of expression is true show html*/
+            <div>   {/*if first part of expression is true show html*/}
                 {this.props.city && <p class="city_name"> {this.props.city}</p> }  
                 <div class="weather_container">
                     <div>
