@@ -2,7 +2,7 @@ import React from 'react';
 import temp from '../images/temp.png';
 import press from '../images/press.png';
 import hum from '../images/hum.png';
-import {deg} from "../config.js";
+import {deg} from "../config.js"; /*to change degrees from Celcius to Farenhait*/
 
 
 class Forecast extends React.Component {
@@ -10,7 +10,7 @@ class Forecast extends React.Component {
         return(
             <div class="forecast">
                 <div>
-                    {this.props.day1 && <h3>{this.props.day1}.{this.props.month1}</h3>}
+                    {this.props.day1 && <h3>{this.props.day1}.{this.props.month1}</h3>}                         
                     {this.props.temperature1 && <p><img src={temp} alt="temperature"/> {this.props.temperature1}{'\u00b0'}{deg}</p>}
                     {this.props.pressure1 && <p><img src={press} alt="pressure" /> {this.props.pressure1} hPa</p>}
                     {this.props.humidity1 && <p><img src={hum} alt="humidity"/>  {this.props.humidity1}%</p>}
