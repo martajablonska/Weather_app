@@ -1,4 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+   
+# React Weather Forecact App
+
+## Technologies
+Project is created with:
+* React
+* JavaScript
+* HTML 5
+* CSS 3
+
+This project was build in [Create React App](https://github.com/facebook/create-react-app).
+
+## How to use
+
+If you want to add your API_KEY or change degrees from Celcius to Fahrenhait check config.js file. 
+
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
