@@ -9,6 +9,7 @@ Project is created with:
 * CSS 3
 
 This project was build in [Create React App](https://github.com/facebook/create-react-app).
+I had used API from https://openweathermap.org/
 
 ## How to use
 
