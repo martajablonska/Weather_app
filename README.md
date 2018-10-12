@@ -8,7 +8,7 @@ Project is created with:
 * HTML 5
 * CSS 3
 
-This project was build in [Create React App](https://github.com/facebook/create-react-app).
+This project was build in [Create React App](https://github.com/facebook/create-react-app).  
 I had used API from https://openweathermap.org/
 
 ## How to use
