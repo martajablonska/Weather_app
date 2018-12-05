@@ -2,7 +2,7 @@ import React from 'react';
 import Form from "./components/Form";
 import Weather from "./components/Weather";
 import Forecast from "./components/Forecast";
-import {API_KEY, temp} from "./config.js";
+import {temp} from "./config.js";
 
 class App extends React.Component {
     state = {
@@ -52,41 +52,43 @@ class App extends React.Component {
         e.preventDefault();
         
         const city = e.target.elements.city.value;
+        const API_KEY = "029a49f5f06afaa61e4c9ec94286a243";
         
-        {/*to get api with weather*/}
-        const apiWeather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)    
+        /*to get api with weather*/
+        const apiWeather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);    
         const dataWeather = await apiWeather.json();  
         
-        {/*to get api with 5 days forecast*/}       
-        const apiForecast = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`)
+        /*to get api with 5 days forecast*/      
+        const apiForecast = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`);
         const dataForecast = await apiForecast.json();
         
-        {/*to choose forecast for midday which will represent all day*/}
+        /*to choose forecast for midday which will represent all day*/
         const listForecast = dataForecast.list;
-        const middayForecast = [];      {/*array with only 5 forecast for midday to every day*/}
+        const middayForecast = [];      /*array with only 5 forecast for midday to every day*/
         
-        for(let i =0; i <listForecast.length; i++) {  {/*yes, it's for loop... i tried to done that in diffrent way but something went wrong*/}                 
-            const item = listForecast[i].dt;    
-            const hour = (new Date(item*1000)).getHours()-2;
-            
+        for(let i =0; i <listForecast.length; i++) {                 
+            const item = listForecast[i].dt;  
+            const hour = (new Date(item*1000)).getHours()-1;
             if (hour === 12) {
                 middayForecast.push(listForecast[i]);
-            };
-        };
+            }
+        }
         
-        {/*variables representing weather and forecast items*/}
+        
+        /*variables representing weather and forecast items*/
         const day = function(item) {  return (new Date((item.dt)*1000)).getDate(); };
         const month = function(item) { return (new Date((middayForecast[0].dt)*1000)).getMonth()+1; }
         const press = function(item) { return Math.round(item.main.pressure); };
         const hum = function(item) { return item.main.humidity; };    
         const desc = function(item) { return item.weather[0].description; };
         
-        {/*variables representing next forecast days*/}
+        /*variables representing next forecast days*/
         const firstDay = middayForecast[0];    
         const secondDay = middayForecast[1]; 
         const thirdDay = middayForecast[2];  
         const fourthDay =  middayForecast[3];
         const fifthDay =  middayForecast[4];
+    
         
         this.setState({
                 city: dataWeather.name,
@@ -179,8 +181,7 @@ class App extends React.Component {
                     pressure5={this.state.pressure5}
                     humidity5={this.state.humidity5}
                     description5={this.state.description5}
-                />    
-                
+                />   
             </div>
         )
     }

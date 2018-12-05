@@ -1,4 +1,4 @@
-export const API_KEY = "false";
+
 
 /*to change degrees from Celcius to Fahrenheit uncomment Fahrenheit code and coment Celsius"*/
 
