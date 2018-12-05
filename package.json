@@ -2,7 +2,7 @@
   "name": "weather-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://martajablonska.github.io/weather-app",
+  "homepage": "https://martajablonska.github.io/Weather_app",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.5",
     "@fortawesome/free-solid-svg-icons": "^5.4.0",
@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeloy": "yarn run build",
-    "deploy": "react-scripts build && gh-pages -b build"
+    "deploy": "react-scripts build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

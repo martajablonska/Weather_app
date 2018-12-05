@@ -2,7 +2,7 @@ import React from 'react';
 import temp from '../images/temp.png';
 import press from '../images/press.png';
 import hum from '../images/hum.png';
-import {deg} from "../config.js"; {/*to change degrees from Celcius to Farenhait*/}
+import {deg} from "../config.js"; /*to change degrees from Celcius to Farenhait*/
 
 
 class Forecast extends React.Component {
