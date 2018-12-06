@@ -13,4 +13,4 @@ I had used API from https://openweathermap.org/
 
 ## How to use
 
-If you want to add your API_KEY or change degrees from Celcius to Fahrenhait check config.js file. 
+If you want to change degrees from Celcius to Fahrenhait check config.js file. 
